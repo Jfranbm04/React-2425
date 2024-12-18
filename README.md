@@ -1,1 +1,3 @@
-# React-2425
+# Curso React 24 25 Grupo Tarde
+
+> Juan Francisco Burgos
