@@ -1,38 +1,33 @@
 // rafce
 
-const Padre = (params) => {     // Es obligatorio poner params al poner en app.jsx:  <Padre info={{ nombre: "Isaias", edad: 25 }}>
-    let handleClick = (() => {
+const Padre = (props) => {
+    const { info, setInfo, children, handleClickEdad } = props;
+    const handleClick = () => {
         setInfo({ ...info, nombre: "Pedro" });
-    });
-
-    let handleClickEdad = (() => {
-        setInfo((prevInfo) => ({ ...prevInfo, edad: prevInfo.edad + 1 }));
-    });
-
-
-    const { info, isAdmin, setInfo, children } = params;
+    };
 
     return (
         <>
             <section>
                 <h2>Bienvenido {info.nombre}</h2>
                 <p>Edad: {info.edad}</p>
-                {isAdmin && (<p>Es administrador</p>)}
+                {info.isAdmin && <p>Es administrador </p>}
+                {info.edad < 18 ? (
+                    <p> Eres menor de edad</p>
+                ) : (
+                    <p> Eres mayor de edad</p>
+                )}
+
                 <div>
-                    <button onClick={handleClick}> Modificar </button>
+                    <button onClick={handleClick}>Modificar</button>
                 </div>
                 <div>
-                    <button onClick={handleClickEdad}> Sumar edad </button>
+                    <button onClick={handleClickEdad}>Aumentar Edad</button>
                 </div>
             </section>
-            <br></br>
-            <section>
-                <p>Niños: {children}</p>
-            </section>
+            {<section>{children}</section>}
         </>
+    );
+};
 
-
-    )
-}
-
-export default Padre
+export default Padre;
