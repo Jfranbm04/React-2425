@@ -24,7 +24,7 @@ export default [
       'react-refresh': reactRefresh,
     },
     rules: {
-      'react/prop-types':  'off',        // Importante para quitar los avisos en rojo
+      'react/prop-types':  'off',        // Importante para quitar los avisos en rojo -> poner sin comillas ''
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,

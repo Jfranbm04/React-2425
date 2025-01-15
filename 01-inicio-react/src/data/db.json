@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "title": "JavaScript: The Definitive Guide",
+      "price": 39.99,
+      "tags": ["JavaScript", "Web Development"],
+      "img": "https://example.com/images/js_definitive_guide.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Python Crash Course",
+      "price": 29.95,
+      "tags": ["Python", "Data Science"],
+      "img": "https://example.com/images/python_crash_course.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Clean Code",
+      "price": 42.00,
+      "tags": ["Software Engineering", "Java"],
+      "img": "https://example.com/images/clean_code.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Eloquent JavaScript",
+      "price": 35.00,
+      "tags": ["JavaScript", "Programming Fundamentals"],
+      "img": "https://example.com/images/eloquent_js.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Learning React",
+      "price": 27.99,
+      "tags": ["React", "JavaScript", "Frontend"],
+      "img": "https://example.com/images/learning_react.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Pragmatic Programmer",
+      "price": 45.00,
+      "tags": ["Software Engineering", "General Programming"],
+      "img": "https://example.com/images/pragmatic_programmer.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Head First Java",
+      "price": 33.95,
+      "tags": ["Java", "Object-Oriented Programming"],
+      "img": "https://example.com/images/head_first_java.jpg"
+    },
+    {
+      "id": 8,
+      "title": "You Don't Know JS: Scope & Closures",
+      "price": 25.00,
+      "tags": ["JavaScript", "Advanced Topics"],
+      "img": "https://example.com/images/ydkjs_scope_closures.jpg"
+    },
+    {
+      "id": 9,
+      "title": "C# in Depth",
+      "price": 49.99,
+      "tags": ["C#", "Object-Oriented Programming"],
+      "img": "https://example.com/images/csharp_in_depth.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Kotlin for Android Developers",
+      "price": 31.99,
+      "tags": ["Kotlin", "Android Development"],
+      "img": "https://example.com/images/kotlin_android_dev.jpg"
+    }
+  ]
+  
