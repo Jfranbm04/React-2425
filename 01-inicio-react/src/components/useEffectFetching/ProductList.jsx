@@ -40,9 +40,9 @@ const ProductList = () => {
     }
 
     // Funcion para quitar un producto del carrito
-    const removeCart = (product) => {
+    // const removeCart = (product) => {
 
-    }
+    // }
 
 
 
