@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
                         if (!response.ok) {
                             throw new Error("Error fetching pokemons");
                         }
-                        return response.json();
+                        return await response.json();
                     } catch (error) {
 
                     }

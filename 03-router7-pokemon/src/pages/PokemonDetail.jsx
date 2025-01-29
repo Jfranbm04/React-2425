@@ -2,12 +2,15 @@
 // Para traer la ruta que llega a este componente usamos useParams y useNavigate 
 
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { usePokemon } from "../context/PokemonContext";
 
 const PokemonDetail = () => {
     // pokemon trae la data a traves de la funcionalidad loader de react router dom
     const pokemon = useLoaderData();
     // Hook para navegar entre rutas (navegacion programática)
     const navigate = useNavigate();
+
+    const { addToFavorites } = usePokemon();
 
     return (
         <div className="container mx-auto p-4">
@@ -55,7 +58,7 @@ const PokemonDetail = () => {
                     </div>
                     {/* Button */}
                     <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-black"
-                        onClick={() => { console.log("Añadir a favoritos") }}>
+                        onClick={() => { addToFavorites(pokemon) }}>
                         Añadir a favoritos
                     </button>
                 </div>
