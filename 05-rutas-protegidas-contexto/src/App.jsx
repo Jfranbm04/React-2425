@@ -4,7 +4,6 @@ import { router } from "./router"
 const App = () => {
   return (
     <RouterProvider router={router} />
-    // <div className="text-4xl text-amber-600">App</div>
   )
 }
 
