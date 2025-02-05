@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <RootLayout />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPage />,    // Si se escribe algo que no existe, lleva a esa pagina
         children: [
             {
                 index: true,
@@ -52,6 +52,14 @@ export const router = createBrowserRouter([
 
 
 
+/*
+PASOS PARA HACER EL REACT ROUTER DOM
 
+- Crear un nuevo archivo index.jsx en carpeta router con las rutas
+- En app.jsx hago un <RouterProvider router={router} />
+- Hago un RootLayout (contenedor principal para todas las paginas) y dentro los Link de las paginas
+- Outlet para mostrar las paginas hijas de RootLayout (Las que hay en la carpeta pages)
+
+*/
 
 
