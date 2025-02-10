@@ -1,3 +1,4 @@
+import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Favorites from "../pages/Favorites";
