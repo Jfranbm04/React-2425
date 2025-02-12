@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useFetch } from '../hooks/useFetch';
 import { getPopularMovies } from '../services/tmdb';
 import MovieCard from "../components/MovieCard";
-
+import { PacmanLoader } from "react-spinners"
 
 
 const Home = () => {
@@ -10,6 +10,12 @@ const Home = () => {
     const [page, setPage] = useState(1);
     // Traigo la informacion del fetch
     const { data, loading, error } = useFetch(() => getPopularMovies(page), [page]); // Si el párametro es una función con parámetro -> callback
+
+    const handlePageChange = (newPage) => {
+        setPage(newPage);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
 
     // Si se produce un error qué hago
     if (error) {
@@ -41,26 +47,42 @@ const Home = () => {
                 <h2 className='text-2xl font-bold text-sky-900'>Peliculas populares</h2>
             </section>
             {loading ? (
-                <div>Cargando... Aqui pondré el spinner</div>
+                // <div>Cargando... Aqui pondré el spinner</div>
+                <PacmanLoader color="#1f297b" />
             ) : (
                 <>
                     {/* Grid para las películas */}
-                    <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6'>
                         {data?.results?.map((movie) => (
                             // Aqui pinto las tarjetas
                             <MovieCard key={movie.id} movie={movie} />
                         ))}
                     </div>
 
+                    {/* Botones para moverme entre páginas */}
+                    <div className='flex justify-center mt-8 gap-2'>
+                        <button
+                            className='bg-sky-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700'
+                            onClick={() => handlePageChange(page - 1)}
+                            disabled={page === 1}
+                        >
+                            Anterior
+                        </button>
+                        <span className='text-gray-800 flex items-center'
+                        >Pagina {data?.page} de {data?.total_pages}</span>
+                        <button
+                            className='bg-sky-900 text-white px-4 py-2 rounded-lg hover:bg-gray-700'
+                            onClick={() => handlePageChange(page + 1)}
+                            disabled={page === data?.total_pages}
+                        >
+                            Siguiente
+                        </button>
+                    </div>
                 </>
             )}
         </div>
     );
 
-
-    // return (
-    //     <div>Home</div>
-    // )
 }
 
 export default Home

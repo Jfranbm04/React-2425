@@ -4,7 +4,7 @@ const BASE_IMG_URL = import.meta.env.VITE_BASE_IMG_URL
 
 // Tamaños de las imagenes
 export const SIZE = {
-    POSTER: "W500",
+    POSTER: "w500",
     ORIGINAL: "original",
 };
 
@@ -21,15 +21,15 @@ const fetchFromApi = async (endpoint, options={}) => {
 };
 
 // Funcion para obtener las peliculas populares
-export const getPopularMovies = async () => {
-    return await fetchFromApi("/movie/popular");
+export const getPopularMovies = async (page = 1) => {
+    return await fetchFromApi("/movie/popular", {page});
 }
 
 export const getMovieDetail = async (id)=> {
     return await fetchFromApi(`/movie/${id}`);
 }
 export const getImageURL = (path, size = SIZE.POSTER) => {
-    return `${BASE_IMG_URL}/${size}/${path}`;
+    return `${BASE_IMG_URL}/${size}${path}`;
 }
 
 export const getMovieVideos = async (id) => {

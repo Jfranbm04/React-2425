@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 
 export const useFetch = (fetchFunction, dependencies=[]) => {
+    // Importante pasar siempre la data, un loading (para evitar null) y error
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
