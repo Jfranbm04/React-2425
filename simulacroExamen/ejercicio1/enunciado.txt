@@ -1,0 +1,4 @@
+Hacer un get a api/products con useState, useEffect y fetch Api
+Mostrar todos los productos por pantalla en una lista
+
+

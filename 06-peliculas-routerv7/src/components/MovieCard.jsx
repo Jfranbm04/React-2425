@@ -19,6 +19,11 @@ const MovieCard = ({ movie }) => {
                             ⭐{Number(movie?.vote_average).toFixed(1)}
 
                         </div>
+                        {/* <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-black"
+                            onClick={() => addToFavorites(pokemon)}
+                        >
+                            Añadir a favoritos
+                        </button> */}
                         <div className='p-4'>
                             <h3
                                 className='text-lg font-bold text-sky-900 group-hover:text-blue-600'
