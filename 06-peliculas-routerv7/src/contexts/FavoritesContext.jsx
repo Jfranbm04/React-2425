@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // Creo el contexto y el provider
-export const favoritesContext = createContext();
-export const favoritesProvider = ({ children }) => {
+export const FavoritesContext = createContext();
+export const FavoritesProvider = ({ children }) => {
 
     const [favorites, setFavorites] = useState(() => {
         return JSON.parse(localStorage.getItem("favorites")) || [];
@@ -26,16 +26,23 @@ export const favoritesProvider = ({ children }) => {
     const removeFavorites = (movie) => {
         setFavorites((prevFavorites) => {
             // Busco la pelicula y la quito de la lista de favoritos
-            return prevFavorites.filter((peliculaFav) => peliculaFav !== movie);
+            return prevFavorites.filter((peliculaFav) => peliculaFav.id !== movie.id);
         });
     }
 
     // Verificar si una película es favorita.
     const isFavorite = (movie) => {
-        return favorites.some((peliculaFav) => peliculaFav === movie);
-    }
+        return favorites.some((peliculaFav) => peliculaFav.id === movie.id);
+    };
 
 
-    return <favoritesContext.Provider value={{ favorites, getFavorites, addFavorites, removeFavorites, isFavorite }}>{children}</favoritesContext.Provider>
+    return <FavoritesContext.Provider value={{ favorites, getFavorites, addFavorites, removeFavorites, isFavorite }}>{children}</FavoritesContext.Provider>
 }
 
+export const useFavorites = () => {
+    const context = useContext(FavoritesContext);
+    if (!context) {
+        throw new Error("useFavorites debe estar dentro del proveedor favoritesProvider");
+    }
+    return context;
+}

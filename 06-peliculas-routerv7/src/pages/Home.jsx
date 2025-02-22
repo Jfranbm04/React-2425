@@ -48,7 +48,9 @@ const Home = () => {
             </section>
             {loading ? (
                 // <div>Cargando... Aqui pondré el spinner</div>
-                <PacmanLoader color="#1f297b" />
+                <div className="flex justify-center py-10">
+                    <PacmanLoader color="#1f297b" />
+                </div>
             ) : (
                 <>
                     {/* Grid para las películas */}

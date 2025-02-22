@@ -35,3 +35,8 @@ export const getImageURL = (path, size = SIZE.POSTER) => {
 export const getMovieVideos = async (id) => {
     return await fetchFromApi(`/movie/${id}/videos`);
 }
+// Función para buscar películas por titulo
+export const searchMovies = async (query) => {
+    if (!query) return { results: [] };
+    return await fetchFromApi('/search/movie', { query });
+};
