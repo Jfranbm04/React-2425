@@ -18,7 +18,7 @@ export const ReviewProvider = ({ children }) => {
 
     const addReview = (movieId, content) => {
         const newReview = {
-            id: Date.now(), // Le pongo un id para 
+            id: Date.now(), // Fecha como id unico 
             content,
             date: new Date().toISOString(),
         };
