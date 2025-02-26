@@ -19,7 +19,7 @@ const LoginPage = () => {
         const password = e.target.password.value.trim(); // Capturamos el valor del input password
 
         try {
-            loginUser({ email, password }); // Llamamos a loginUser con los datos capturados
+            await loginUser({ email, password }); // Llamamos a loginUser con los datos capturados
             navigate("products"); // Redirigimos al usuario
         } catch (error) {
             console.log("Error al iniciar sesión", error);

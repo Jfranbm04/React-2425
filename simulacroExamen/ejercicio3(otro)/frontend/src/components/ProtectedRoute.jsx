@@ -1,15 +1,14 @@
 import React from 'react'
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ children }) => {
-
-    // Recupero el token
     const { token } = useAuth();
-    const navigate = useNavigate();
 
-    if (!token) navigate("/");
-
+    if (!token) {
+        console.log("No hay token");
+        return <Navigate to="/" />;
+    }
 
     return (
         <div>{children}</div>

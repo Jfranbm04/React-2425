@@ -27,9 +27,9 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       // Aqui hacemos un login
-      loginUser(formData);
+      await loginUser(formData);
       // redirigir a la pagina de productos si hay exito
-      navigate("products");
+      navigate("dashboard");
 
     } catch (error) {
       console.log("Error al iniciar sesión", error);

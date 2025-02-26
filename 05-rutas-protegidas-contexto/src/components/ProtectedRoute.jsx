@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
     const { isAuthenticated } = useAuth();
     if (!isAuthenticated) {
         // Lo mando a pagina login
-        <Navigate to="/" replace={true} />
+        return <Navigate to="/" replace={true} />
     };
 
     // Si puedes pasar

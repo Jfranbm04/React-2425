@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
 
-
 const authContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -30,9 +29,10 @@ export const AuthProvider = ({ children }) => {
             setToken(data.token);
             localStorage.setItem("user", JSON.stringify(data.user)); // almaceno el usuario y el token en el localStorage
             localStorage.setItem("token", data.token);
-
+            // return true;
         } catch (error) {
             console.log("Error al iniciar sesion", error)
+            // return false;
         }
     }
 
